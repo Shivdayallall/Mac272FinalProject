@@ -14,7 +14,7 @@
 
         // $_SESSION["user_name"] = $result["username"];
 
-     header("Location: home.php");
+     header("Location: page-1.html");
         
     } else {
 

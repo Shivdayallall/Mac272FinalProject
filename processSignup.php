@@ -34,15 +34,12 @@
     $hashConfirmPassword = password_hash($_POST["confirmPassword"], PASSWORD_DEFAULT);
 
 
-
-
-    // print_r($_POST);
-
     // Insert the new user into the table
     $sql = "INSERT INTO usertable(username, email, user_password, confirm_userpassword) VALUES('$userName', '$email', '$hashPassword', '$hashConfirmPassword')";
 
     if(mysqli_query($conn, $sql)) {
-        header("Location: sucessSignup.html");
+        header("Location: page-1.php");
+        exit;
        
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
