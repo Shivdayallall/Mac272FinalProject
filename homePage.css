@@ -1,6 +1,4 @@
 .foodContainer {
-    /* background-color: bisque; */
-    /* min-width: 540; */
     text-transform: capitalize;
 
     display: flex;
@@ -13,4 +11,15 @@
     text-align: center;
     padding: 0 0.9rem 0.1rem 0.9rem;
     border-radius: 3rem;
+}
+
+#log-out {
+    font: bolder;
+    font-size: 20px;
+    color: brown;
+    padding: 10px 20px;
+}
+.pic  {
+    height: 50px;
+    width: 50px;
 }

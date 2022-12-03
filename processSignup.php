@@ -29,16 +29,11 @@
         die("Passowrd must match");
     }
 
-    // Hash user password for security
-    $hashPassword = password_hash($_POST["password"], PASSWORD_DEFAULT);
-    $hashConfirmPassword = password_hash($_POST["confirmPassword"], PASSWORD_DEFAULT);
-
-
     // Insert the new user into the table
-    $sql = "INSERT INTO usertable(username, email, user_password, confirm_userpassword) VALUES('$userName', '$email', '$hashPassword', '$hashConfirmPassword')";
+    $sql = "INSERT INTO usertable(username, email, user_password, confirm_userpassword) VALUES('$userName', '$email', '$password', '$confirmPassword')";
 
     if(mysqli_query($conn, $sql)) {
-        header("Location: page-1.php");
+        header("Location: sucessSignup.html");
         exit;
        
     } else {

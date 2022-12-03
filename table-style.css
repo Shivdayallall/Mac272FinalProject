@@ -1,7 +1,7 @@
-.navbar {
-    padding-left: 100%;
+body {
+    padding-bottom: 10px;
+    text-transform: capitalize;
 }
-
 #cart {
     margin: 100px auto;
     border-style: solid;

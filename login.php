@@ -1,3 +1,37 @@
+<?php 
+  require __DIR__ . "/dbConnection.php";
+
+  if($_SERVER["REQUEST_METHOD"] ==="POST") {
+
+      // Gather the user data from the form
+      $email = $_POST["email"];
+      $password = $_POST["password"];
+  
+      // Gather the user from the db
+      $sql = "SELECT id, email, user_password FROM usertable WHERE email='$email' and user_password='$password'";
+      $result = mysqli_query($conn, $sql);
+  
+      if(mysqli_num_rows($result) > 0) {
+          session_start();
+  
+          // $_SESSION["user_name"] = $result["username"];
+  
+       header("Location: page-1.php");
+          
+      } else {
+  
+      }
+  
+      mysqli_close($conn);
+
+  }
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +55,7 @@
 <body class="text-center">
 
   <main class="form-signin">
-    <form method="POST" action="processLogin.php">
+    <form method="POST" action="">
       <img class="mb-4" src="./Img/programmer.png" alt="" width="72" height="57">
       <h1 class="h3 mb-3 fw-normal">Please Log in</h1>
 
